@@ -1,242 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-.w3-quarter img{margin-bottom: -6px; cursor: pointer}
-.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </style>
 </head>
-<body class="w3-light-grey">
+<body class="w3-content" style="max-width:1200px">
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
-  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a> 
-  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">PORTFOLIO</a> 
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a> 
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-wide"><b>LOGO</b></h3>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="#" class="w3-bar-item w3-button">Shirts</a>
+    <a href="#" class="w3-bar-item w3-button">Dresses</a>
+    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Jeans <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Skinny</a>
+      <a href="#" class="w3-bar-item w3-button">Relaxed</a>
+      <a href="#" class="w3-bar-item w3-button">Bootcut</a>
+      <a href="#" class="w3-bar-item w3-button">Straight</a>
+    </div>
+    <a href="#" class="w3-bar-item w3-button">Jackets</a>
+    <a href="#" class="w3-bar-item w3-button">Gymwear</a>
+    <a href="#" class="w3-bar-item w3-button">Blazers</a>
+    <a href="#" class="w3-bar-item w3-button">Shoes</a>
+  </div>
+  <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
+  <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
 </nav>
 
 <!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
-  <span class="w3-left w3-padding">SOME NAME</span>
-  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
 </header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main w3-content" style="max-width:1600px;margin-top:83px">
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
   
-  <!-- Photo grid -->
-  <div class="w3-row w3-grayscale-min">
-    <div class="w3-quarter">
-      <img src="/w3images/girl.jpg" style="width:100%" onclick="onClick(this)" alt="Canoeing again">
-      <img src="/w3images/boy.jpg" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
-      <img src="/w3images/girl.jpg" style="width:100%" onclick="onClick(this)" alt="The Beach. Me. Alone. Beautiful">
-   </div>
-    
-   <div class="w3-quarter">
-      <img src="/w3images/girl_train.jpg" style="width:100%" onclick="onClick(this)" alt="A girl, and a train passing">
-      <img src="/w3images/man_bench.jpg" style="width:100%" onclick="onClick(this)" alt="Waiting for the bus in the desert">
-      <img src="/w3images/natureboy.jpg" style="width:100%" onclick="onClick(this)" alt="Nature again.. At its finest!">
-    </div>
-    
-    <div class="w3-quarter">
-      <img src="/w3images/man_bench.jpg" style="width:100%" onclick="onClick(this)" alt="Waiting for the bus in the desert">
-      <img src="/w3images/girl_mountain.jpg" style="width:100%" onclick="onClick(this)" alt="What a beautiful scenery this sunset">
-      <img src="/w3images/closegirl.jpg" style="width:100%" onclick="onClick(this)" alt="The Beach. Me. Alone. Beautiful">
-    </div>
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <p class="w3-left">Jeans</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
+  </header>
 
-    <div class="w3-quarter">
-      <img src="/w3images/natureboy.jpg" style="width:100%" onclick="onClick(this)" alt="A boy surrounded by beautiful nature">
-      <img src="/w3images/girl_train.jpg" style="width:100%" onclick="onClick(this)" alt="A girl, and a train passing">
-      <img src="/w3images/boy.jpg" style="width:100%" onclick="onClick(this)" alt="Quiet day at the beach. Cold, but beautiful">
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <img src="/w3images/jeans.jpg" alt="Jeans" style="width:100%">
+    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+      <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
+      <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
+      <h1 class="w3-hide-small">COLLECTION 2016</h1>
+      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
     </div>
   </div>
 
-  <!-- Pagination -->
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p>8 items</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row w3-grayscale">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="/w3images/jeans1.jpg" style="width:100%">
+        <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="/w3images/jeans2.jpg" style="width:100%">
+        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+      </div>
     </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="/w3images/jeans2.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="/w3images/jeans3.jpg" style="width:100%">
+        <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="/w3images/jeans3.jpg" style="width:100%">
+        <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+      </div>
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="/w3images/jeans4.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">Sale</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Vintage Skinny Jeans<br><b class="w3-text-red">$14.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="/w3images/jeans4.jpg" style="width:100%">
+        <p>Vintage Skinny Jeans<br><b>$14.99</b></p>
+      </div>
+      <div class="w3-container">
+        <img src="/w3images/jeans1.jpg" style="width:100%">
+        <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subscribe section -->
+  <div class="w3-container w3-black w3-padding-32">
+    <h1>Subscribe</h1>
+    <p>To get special offers and VIP treatment:</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
+    <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
   </div>
   
-  <!-- Modal for full size images on click-->
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption"></p>
-    </div>
-  </div>
-
-  <!-- About section -->
-  <div class="w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32" id="about">
-    <h4><b>About Me</b></h4>
-    <img src="/w3images/avatar_hat.jpg" alt="Me" class="w3-image w3-padding-32" width="600" height="650">
-    <div class="w3-content w3-justify" style="max-width:600px">
-      <h4>My Name</h4>
-      <p>Some text about me. I love taking photos of PEOPLE. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <p>mail: example@example.com</p>
-      <p>tel: 5353 35531</p>
-      <hr class="w3-opacity">
-      <h4 class="w3-padding-16">Technical Skills</h4>
-      <p class="w3-wide">Photography</p>
-      <div class="w3-white">
-        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:95%">95%</div>
-      </div>
-      <p class="w3-wide">Web Design</p>
-      <div class="w3-white">
-        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:85%">85%</div>
-      </div>
-      <p class="w3-wide">Photoshop</p>
-      <div class="w3-white">
-        <div class="w3-container w3-padding-small w3-center w3-grey" style="width:80%">80%</div>
-      </div>
-      <p><button class="w3-button w3-light-grey w3-padding-large w3-margin-top w3-margin-bottom w3-hover-black">Download Resume</button></p>
-      <hr class="w3-opacity">
-
-      <h4 class="w3-padding-16">How much I charge</h4>
-      <div class="w3-row-padding" style="margin:0 -16px">
-        <div class="w3-half w3-margin-bottom">
-          <ul class="w3-ul w3-white w3-center">
-            <li class="w3-black w3-xlarge w3-padding-32">Basic</li>
-            <li class="w3-padding-16">Web Design</li>
-            <li class="w3-padding-16">Photography</li>
-            <li class="w3-padding-16">5GB Storage</li>
-            <li class="w3-padding-16">Mail Support</li>
-            <li class="w3-padding-16">
-              <h2>$ 10</h2>
-              <span class="w3-opacity">per month</span>
-            </li>
-            <li class="w3-light-grey w3-padding-24">
-              <button class="w3-button w3-white w3-padding-large">Sign Up</button>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="w3-half">
-          <ul class="w3-ul w3-white w3-center">
-            <li class="w3-black w3-xlarge w3-padding-32">Pro</li>
-            <li class="w3-padding-16">Web Design</li>
-            <li class="w3-padding-16">Photography</li>
-            <li class="w3-padding-16">50GB Storage</li>
-            <li class="w3-padding-16">Endless Support</li>
-            <li class="w3-padding-16">
-              <h2>$ 25</h2>
-              <span class="w3-opacity">per month</span>
-            </li>
-            <li class="w3-light-grey w3-padding-24">
-              <button class="w3-button w3-white w3-padding-large">Sign Up</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Contact section -->
-  <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
-    <div class="w3-content" style="max-width:600px">
-      <h4 class="w3-center"><b>Contact Me</b></h4>
-      <p>Do you want me to photograph you? Fill out the form and fill me in with the details :) I love meeting new people!</p>
-      <form action="/action_page.php" target="_blank">
-        <div class="w3-section">
-          <label>Name</label>
-          <input class="w3-input w3-border" type="text" name="Name" required>
-        </div>
-        <div class="w3-section">
-          <label>Email</label>
-          <input class="w3-input w3-border" type="text" name="Email" required>
-        </div>
-        <div class="w3-section">
-          <label>Message</label>
-          <input class="w3-input w3-border" type="text" name="Message" required>
-        </div>
-        <button type="submit" class="w3-button w3-block w3-black w3-margin-bottom">Send Message</button>
-      </form>
-    </div>
-  </div>
-
   <!-- Footer -->
-  <footer class="w3-container w3-padding-32 w3-grey">  
+  <footer class="w3-padding-64 w3-light-grey w3-small w3-center" id="footer">
     <div class="w3-row-padding">
-      <div class="w3-third">
-        <h3>INFO</h3>
-        <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>      
-      </div>
-    
-      <div class="w3-third">
-        <h3>BLOG POSTS</h3>
-        <ul class="w3-ul">
-          <li class="w3-padding-16 w3-hover-black">
-            <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Lorem</span><br>
-            <span>Sed mattis nunc</span>
-          </li>
-          <li class="w3-padding-16 w3-hover-black">
-            <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
-            <span class="w3-large">Ipsum</span><br>
-            <span>Praes tinci sed</span>
-          </li> 
-        </ul>
+      <div class="w3-col s4">
+        <h4>Contact</h4>
+        <p>Questions? Go ahead.</p>
+        <form action="/action_page.php" target="_blank">
+          <p><input class="w3-input w3-border" type="text" placeholder="Name" name="Name" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Email" name="Email" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Subject" name="Subject" required></p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Message" name="Message" required></p>
+          <button type="submit" class="w3-button w3-block w3-black">Send</button>
+        </form>
       </div>
 
-      <div class="w3-third">
-        <h3>POPULAR TAGS</h3>
-        <p>
-          <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">London</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">DIY</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Family</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Shopping</span>
-          <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Games</span>
-        </p>
+      <div class="w3-col s4">
+        <h4>About</h4>
+        <p><a href="#">About us</a></p>
+        <p><a href="#">We're hiring</a></p>
+        <p><a href="#">Support</a></p>
+        <p><a href="#">Find store</a></p>
+        <p><a href="#">Shipment</a></p>
+        <p><a href="#">Payment</a></p>
+        <p><a href="#">Gift card</a></p>
+        <p><a href="#">Return</a></p>
+        <p><a href="#">Help</a></p>
+      </div>
+
+      <div class="w3-col s4 w3-justify">
+        <h4>Store</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> Company Name</p>
+        <p><i class="fa fa-fw fa-phone"></i> 0044123123</p>
+        <p><i class="fa fa-fw fa-envelope"></i> ex@mail.com</p>
+        <h4>We accept</h4>
+        <p><i class="fa fa-fw fa-cc-amex"></i> Amex</p>
+        <p><i class="fa fa-fw fa-credit-card"></i> Credit Card</p>
+        <br>
+        <i class="fa fa-facebook-official w3-hover-opacity w3-large"></i>
+        <i class="fa fa-instagram w3-hover-opacity w3-large"></i>
+        <i class="fa fa-snapchat w3-hover-opacity w3-large"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity w3-large"></i>
+        <i class="fa fa-twitter w3-hover-opacity w3-large"></i>
+        <i class="fa fa-linkedin w3-hover-opacity w3-large"></i>
       </div>
     </div>
   </footer>
-  
+
   <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
 
-<!-- End page content -->
+  <!-- End page content -->
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">NEWSLETTER</h2>
+      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+    </div>
+  </div>
 </div>
 
 <script>
-// Script to open and close sidebar
+// Accordion 
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
+
+
+// Open and close sidebar
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
   document.getElementById("myOverlay").style.display = "block";
 }
-
+ 
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
   document.getElementById("myOverlay").style.display = "none";
 }
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
 </script>
-
 
 </body>
 </html>
